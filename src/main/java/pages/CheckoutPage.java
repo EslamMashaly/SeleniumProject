@@ -4,13 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
 public class CheckoutPage extends BasePage{
-    private By addressField=By.id("ShippingAddressForm_address1");
-    private By stateField=By.id("ShippingAddressForm_fk_customer_address_region");
-    private By cityField=By.id("ShippingAddressForm_fk_customer_address_city");
-    private By saveAndContinueButton=By.id("osh-opc-btn-save-address-shipping");
-    private By doorDeliveryRadioButton=By.cssSelector("label[for='UniversalShippingMatrix']");
-    private By proceedToNextStepButton=By.id("osh-opc-btn-save");
-    private By emptyAddressText=By.xpath("//div[text()='Required field']");
+    private final By addressField=By.id("ShippingAddressForm_address1");
+    private final By stateField=By.id("ShippingAddressForm_fk_customer_address_region");
+    private final By cityField=By.id("ShippingAddressForm_fk_customer_address_city");
+    private final By saveAndContinueButton=By.id("osh-opc-btn-save-address-shipping");
+    private final By doorDeliveryRadioButton=By.cssSelector("label[for='UniversalShippingMatrix']");
+    private final By proceedToNextStepButton=By.id("osh-opc-btn-save");
+    private final By emptyAddressText=By.xpath("//div[text()='Required field']");
 
     public void enterAddress(String address){
         sendKeys(addressField,address);
@@ -24,7 +24,7 @@ public class CheckoutPage extends BasePage{
         Select dropDown= new Select(find(cityField));
         dropDown.selectByVisibleText(region);
     }
-    public String getEmptyAdressText(){
+    public String getEmptyAddressText(){
         return getText(emptyAddressText);
     }
     public void pressSaveAndContinue(){

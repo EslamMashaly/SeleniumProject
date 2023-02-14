@@ -1,4 +1,4 @@
-package changingLanguage;
+package homePage;
 
 import base.BaseTest;
 import org.testng.Assert;

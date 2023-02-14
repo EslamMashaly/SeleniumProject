@@ -21,27 +21,29 @@ public class BaseTest {
 
 
     @BeforeMethod
-    public void setUp()  {
+    public void setUp()   {
         WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.get("https://www.jumia.com.eg");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        homePage=new HomePage();
         basePage=new BasePage();
         basePage.setDriver(driver);
+        homePage=new HomePage();
+
+
     }
 
     @AfterMethod
     public void tearDown(){
-       driver.quit();
+      // driver.quit();
     }
 
     /*********************LOGIN**************************/
     public void login(){
         homePage.closePopUp();
         AuthenticationPage authenticationPage=homePage.goToSignInPage();
-        authenticationPage.enterEmail("81e17fb8d7f4@drmail.in");
+        authenticationPage.enterEmail("5aa0eb6cc9ac@drmail.in");
         var signInPage= authenticationPage.continueSigningIn();
         signInPage.enterPassword("gETZKvbhZ9m#Tpa");
         signInPage.completeSigningIn();
@@ -66,6 +68,16 @@ public class BaseTest {
         data[1][0]="table";
         data[2][0]="watch";
         data[3][0]="كتاب";
+
+        return data;
+    }
+    @DataProvider(name = "newsletter")
+    public Object [][] newsLetterField(){
+        Object[][] data=new Object[2][2];
+        data[0][0]="274354b98651@drmail.in";
+        data[0][1]="male";
+        data[1][0]="32d87d803cfb@drmail.in";
+        data[1][1]="female";
 
         return data;
     }

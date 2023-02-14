@@ -20,7 +20,7 @@ public class BuyingAProductE2E extends BaseTest {
         checkOutPage.chooseCity("Port Said");
         checkOutPage.chooseRegion("Port-Fouad");
         checkOutPage.pressSaveAndContinue();
-        Assert.assertEquals(checkOutPage.getEmptyAdressText(),"Required field");
+        Assert.assertEquals(checkOutPage.getEmptyAddressText(),"Required field");
     }
 
     @Test(priority = 2)
@@ -31,7 +31,7 @@ public class BuyingAProductE2E extends BaseTest {
         checkOutPage.enterAddress("dgwrhkbwnbmlsmblwmegkqe,ngb");
         checkOutPage.chooseCity("Port Said");
         checkOutPage.pressSaveAndContinue();
-        Assert.assertEquals(checkOutPage.getEmptyAdressText(),"Required field");
+        Assert.assertEquals(checkOutPage.getEmptyAddressText(),"Required field");
     }
 
     @Test(priority = 3)

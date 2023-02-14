@@ -3,10 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 
 public class AuthenticationPage extends BasePage {
-    private By emailField=By.name("email");
-    private By continueButton=By.xpath("//button[@type='submit']");
-    private By invalidEmailMessage=By.id("api-error");
-    private By emptyEmailMessage=By.id("empty-email-error-message");
+    private final By emailField=By.name("email");
+    private final By continueButton=By.xpath("//button[@type='submit']");
+    private final By invalidEmailMessage=By.id("api-error");
+    private final By emptyEmailMessage=By.id("empty-email-error-message");
 
     public void enterEmail(String email){
         sendKeys(emailField,email);

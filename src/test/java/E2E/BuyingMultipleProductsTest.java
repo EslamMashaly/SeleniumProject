@@ -11,7 +11,7 @@ public class BuyingMultipleProductsTest extends BaseTest {
         login();
         String searchWord="harry potter books";
         var searchResultsPage=homePage.search(searchWord);
-        //searchResultsPage.addToCart("Harry Potter And The Philosopher's Stone");
+        searchResultsPage.addToCart("Harry Potter And The Philosopher's Stone");
         searchResultsPage.addToCart("Harry Potter And The Chamber Of Secrets");
         searchResultsPage.addToCart("Harry Potter And The Prisoner Of Azkaban");
         var cartPage=searchResultsPage.gotoCart();

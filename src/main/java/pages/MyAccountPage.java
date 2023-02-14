@@ -5,12 +5,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 
 public class MyAccountPage extends BasePage{
-    private By closeAccountButton= By.linkText("Close Account");
-    private By closingReasonDropDown=By.id("fi-reasons");
-    private By confirmClosingCheckbox=By.xpath("//label[contains(text(),'Yes, I wish to definitely close my Jumia account a')]");
-    private By closeMyAccountButton=By.cssSelector(".btn._prim.-mts.-fw");
-    private By cookiesMessageCloseButton=By.xpath("//button[@class='cls']");
-    private By closingAssertionText=By.cssSelector(".-fs16.-pts.-m");
+    private final By closeAccountButton= By.linkText("Close Account");
+    private final By closingReasonDropDown=By.id("fi-reasons");
+    private final By confirmClosingCheckbox=By.xpath("//label[contains(text(),'Yes, I wish to definitely close my Jumia account a')]");
+    private final By closeMyAccountButton=By.cssSelector(".btn._prim.-mts.-fw");
+    private final By cookiesMessageCloseButton=By.xpath("//button[@class='cls']");
+    private final By closingAssertionText=By.cssSelector(".-fs16.-pts.-m");
+
     public void goToCloseAccount(){
         click(closeAccountButton);
     }
@@ -22,14 +23,12 @@ public class MyAccountPage extends BasePage{
     public void selectClosingCheckBox(){
         click(confirmClosingCheckbox);
     }
-
     public void pressCloseMyAccountButton(){
         click(closeMyAccountButton);
     }
     public void closeCookiesMessage(){
         click(cookiesMessageCloseButton);
     }
-
     public String getClosingAccountConfirmationMessage(){
         return getText(closingAssertionText);
     }

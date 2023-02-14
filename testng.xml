@@ -53,9 +53,15 @@
                     <include name="testDeletingProductFromCart"/>
                 </methods>
             </class>
-            <class name="changingLanguage.ChangingLanguageTest">
+            <class name="homePage.ChangingLanguageTest">
                 <methods>
                     <include name="changeLanguageToArabic"/>
+                </methods>
+            </class>
+            <class name="homePage.NewsLetterEmail">
+                <methods>
+                    <include name="testEnteringEmailForNews"/>
+                    <include name="testEnteringAlreadySentEmailForNews"/>
                 </methods>
             </class>
             <class name="E2E.BuyingMultipleProductsTest">
