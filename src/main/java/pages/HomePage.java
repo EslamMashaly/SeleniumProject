@@ -22,6 +22,7 @@ private final By newsLetterMale=By.cssSelector("button[value='male']");
 private final By newsLetterFemale=By.cssSelector("button[value='female']");
 private final By newsLetterMessage=By.cssSelector(".cnt");
 private final By existSubscriptionMessage=By.xpath("//div[@class='fi-er']");
+private final By cookiesCancelButton=By.cssSelector(".cls");
 
 public void closePopUp(){
     click(popUp);
@@ -79,12 +80,12 @@ public void chooseGender(String gender){
 public String getNewsLetterEmailMessage(){
     return getText(newsLetterMessage);
 }
-public void scroll(){
-    JavascriptExecutor executor = (JavascriptExecutor)driver;
-    executor.executeScript("window.scrollBy(0,100)");
-}
 public String getAlreadySubscribedMessage(){
     return getText(existSubscriptionMessage);
+}
+public void cancelCookiesMessage(){
+    elementVisibilityExplicitWait(cookiesCancelButton,8);
+    click(cookiesCancelButton);
 }
 
 }

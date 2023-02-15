@@ -22,7 +22,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp()   {
-        WebDriverManager.edgedriver().setup();
+            WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.get("https://www.jumia.com.eg");
         driver.manage().window().maximize();
@@ -36,21 +36,21 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown(){
-      // driver.quit();
+      driver.quit();
     }
 
     /*********************LOGIN**************************/
     public void login(){
         homePage.closePopUp();
         AuthenticationPage authenticationPage=homePage.goToSignInPage();
-        authenticationPage.enterEmail("5aa0eb6cc9ac@drmail.in");
+        authenticationPage.enterEmail("33c0e005c952@drmail.in");
         var signInPage= authenticationPage.continueSigningIn();
         signInPage.enterPassword("gETZKvbhZ9m#Tpa");
         signInPage.completeSigningIn();
         Assert.assertTrue(homePage.getAssertionText().contains("Hi, "));
     }
 
-    /*********************DATAPROVIDER**************************/
+    /*********************DATAPROVIDERS**************************/
     @DataProvider
     public Object [][] getData(){
         Object[][] data=new Object[2][2];
@@ -71,12 +71,13 @@ public class BaseTest {
 
         return data;
     }
+
     @DataProvider(name = "newsletter")
     public Object [][] newsLetterField(){
         Object[][] data=new Object[2][2];
-        data[0][0]="274354b98651@drmail.in";
+        data[0][0]="dc25dd73739a@drmail.in";
         data[0][1]="male";
-        data[1][0]="32d87d803cfb@drmail.in";
+        data[1][0]="33c0e005c952@drmail.in";
         data[1][1]="female";
 
         return data;
