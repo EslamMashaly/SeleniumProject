@@ -13,6 +13,7 @@ public class SearchResultsPage extends BasePage {
     private final By addedToWishListAssertion = By.cssSelector(".cnt");
     private final By cartButton = By.id("ci");
     private final By saveItemButton = By.xpath("//button[@class='btn _def _i _rnd -mas -bg-wt']");
+    private final By cookiesCancelButton=By.cssSelector(".cls");
 
     public Boolean assertSearchResults(String searchWord) {
         int j = 0;
@@ -68,7 +69,6 @@ public class SearchResultsPage extends BasePage {
         return new CartPage();
     }
 
-
     public ProductPage choosingTheProductToBuy(String product) {
         String productToBuy = product;
         List<WebElement> products = driver.findElements(allItems);
@@ -80,6 +80,10 @@ public class SearchResultsPage extends BasePage {
             }
         }
         return new ProductPage();
+    }
+    public void cancelCookiesMessage(){
+        elementVisibilityExplicitWait(cookiesCancelButton,8);
+        click(cookiesCancelButton);
     }
 
 

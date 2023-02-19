@@ -7,6 +7,7 @@ import pages.BasePage;
 public class ExtentReportNG extends BasePage {
 
     public static ExtentReports getReportObject() {
+
         String reportPath = System.getProperty("user.dir") + "//reports/index.html";
         ExtentSparkReporter report = new ExtentSparkReporter(reportPath);
         report.config().setReportName("Jumia Tests Report");

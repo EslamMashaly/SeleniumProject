@@ -22,7 +22,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp()   {
-            WebDriverManager.edgedriver().setup();
+        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.get("https://www.jumia.com.eg");
         driver.manage().window().maximize();
@@ -43,7 +43,7 @@ public class BaseTest {
     public void login(){
         homePage.closePopUp();
         AuthenticationPage authenticationPage=homePage.goToSignInPage();
-        authenticationPage.enterEmail("33c0e005c952@drmail.in");
+        authenticationPage.enterEmail("e75e1e540da0@drmail.in");
         var signInPage= authenticationPage.continueSigningIn();
         signInPage.enterPassword("gETZKvbhZ9m#Tpa");
         signInPage.completeSigningIn();
@@ -75,9 +75,9 @@ public class BaseTest {
     @DataProvider(name = "newsletter")
     public Object [][] newsLetterField(){
         Object[][] data=new Object[2][2];
-        data[0][0]="dc25dd73739a@drmail.in";
+        data[0][0]="e75e1e540da0@drmail.in";
         data[0][1]="male";
-        data[1][0]="33c0e005c952@drmail.in";
+        data[1][0]="7f4351590e26@drmail.in";
         data[1][1]="female";
 
         return data;
