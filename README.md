@@ -1,7 +1,10 @@
 # Selenium Framework project for testing Jumia's website.
 
-I used Selenium with Java, Maven, TestNG, POM
-and generated ExtentReport with screenshots of failed scripts.
+The project uses Selenium with Java, Maven and TestNG framework. 
+Designed with POM pattern.
+Supports Multiple Browsers.
+Supports Headless Running.
+Generates ExtentReport with screenshots of failed scripts.
 
 ## I tested these functionalities:
 * Registration
@@ -22,8 +25,8 @@ and generated ExtentReport with screenshots of failed scripts.
 ___
 * Firstly, make sure Jumia's website is working in your environment.
 [Jumia](https://www.jumia.com.eg)
-* Make sure you have the edge browser, or you can change it from BaseTest class to whichever browser you need. (src/test/java/base/BaseTest.java)
-* Provide a valid registration email in the email field in RegisterTest class. (src/test/java/register/RegisterTests.java)
+* Choose a browser to run the test on (Edge, Chrome, Firefox) by adding the browser name in the parameter value in the testng.xml file.
+* Provide a valid registration email in the email field in RegisterTest class. (src/test/java/register/RegisterTests.java).
 ```java
     private String email="e75e1e540da0@drmail.in";
     private String password="gETZKvbhZ9m#Tpa";
@@ -50,4 +53,4 @@ ___
 ```
 * Run the tests from the testng.xml file.
 
-Thanks
+Thanks 
