@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class SearchResultsPage extends BasePage {
-
     private final By allItems = By.xpath("//h3[@class='name']");
     private final By addToCartButton2 = By.id("add-to-cart");
     private final By addedToCartAssertion = By.cssSelector(".-pam.-f1");
@@ -32,8 +31,6 @@ public class SearchResultsPage extends BasePage {
         }
         return x;
     }
-
-
     public void addToCart(String product) {
         String productToBuy = product;
         List<WebElement> products = driver.findElements(allItems);
@@ -48,7 +45,6 @@ public class SearchResultsPage extends BasePage {
             }
         }
     }
-
     public void addToWishList(String product) {
         String productToSave = product;
         List<WebElement> products = driver.findElements(allItems);
@@ -63,12 +59,10 @@ public class SearchResultsPage extends BasePage {
             }
         }
     }
-
     public CartPage gotoCart() {
         click(cartButton);
         return new CartPage();
     }
-
     public ProductPage choosingTheProductToBuy(String product) {
         String productToBuy = product;
         List<WebElement> products = driver.findElements(allItems);

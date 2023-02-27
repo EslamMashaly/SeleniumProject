@@ -3,11 +3,15 @@ package base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import pages.AuthenticationPage;
 import pages.BasePage;
 import pages.HomePage;
@@ -19,11 +23,26 @@ public class BaseTest {
     protected HomePage homePage;
     protected BasePage basePage;
 
-
+    @Parameters("BrowserName")
     @BeforeMethod
-    public void setUp()   {
-        WebDriverManager.edgedriver().setup();
-        driver = new EdgeDriver();
+    public void setUp(String browserName)   {
+        //ChromeOptions options=new ChromeOptions();
+        // options.addArguments("headless");
+        // String browserName="chrome";
+        if(browserName.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+
+        }
+        else if (browserName.equalsIgnoreCase("firefox")) {
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+
+        } else if (browserName.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        }
+
         driver.get("https://www.jumia.com.eg");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -43,7 +62,7 @@ public class BaseTest {
     public void login(){
         homePage.closePopUp();
         AuthenticationPage authenticationPage=homePage.goToSignInPage();
-        authenticationPage.enterEmail("e75e1e540da0@drmail.in");
+        authenticationPage.enterEmail("b0328669e731@drmail.in");
         var signInPage= authenticationPage.continueSigningIn();
         signInPage.enterPassword("gETZKvbhZ9m#Tpa");
         signInPage.completeSigningIn();
@@ -75,9 +94,9 @@ public class BaseTest {
     @DataProvider(name = "newsletter")
     public Object [][] newsLetterField(){
         Object[][] data=new Object[2][2];
-        data[0][0]="e75e1e540da0@drmail.in";
+        data[0][0]="aba5740296ff@drmail.in";
         data[0][1]="male";
-        data[1][0]="7f4351590e26@drmail.in";
+        data[1][0]="b3d792f89dba@drmail.in";
         data[1][1]="female";
 
         return data;

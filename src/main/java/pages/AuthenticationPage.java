@@ -11,7 +11,6 @@ public class AuthenticationPage extends BasePage {
     public void enterEmail(String email){
         sendKeys(emailField,email);
     }
-
     public SignUpPage continueSigningUp(){
     click(continueButton);
     return new SignUpPage();

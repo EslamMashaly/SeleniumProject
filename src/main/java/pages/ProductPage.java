@@ -16,7 +16,6 @@ public class ProductPage extends BasePage{
     public void chooseQuantity(){
         click(productQuantityButton);
         }
-
     public CartPage goToCartAndCheckout(){
         elementVisibilityExplicitWait(productAddedMessage,5);
         click(viewCartButton);

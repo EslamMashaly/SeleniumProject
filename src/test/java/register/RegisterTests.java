@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.AuthenticationPage;
 
 public class RegisterTests extends BaseTest {
-    private String email="e75e1e540da0@drmail.in";
+    private String email="b0328669e731@drmail.in";
     private String password="gETZKvbhZ9m#Tpa";
 
     @Test(priority = 0)
@@ -117,7 +117,7 @@ public class RegisterTests extends BaseTest {
         personalDetailsPage.chooseBirthDate("2171997");
         personalDetailsPage.selectCheckBox();
         personalDetailsPage.finishSigning();
-        personalDetailsPage.enterPinNumber("123456123456");
+       // personalDetailsPage.enterPinNumber("123456123456");
         Thread.sleep(8000);
         Assert.assertEquals(homePage.getAssertionText(),"Hi, "+firstName);
 

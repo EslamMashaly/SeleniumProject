@@ -4,7 +4,8 @@
     <listeners>
         <listener class-name="base.Listeners"/>
     </listeners>>
-    <test verbose="2" preserve-order="true" name="Jumia">
+    <test name="Jumia Tests">
+    <parameter name="BrowserName" value="chrome"></parameter>
         <classes>
             <class name="register.RegisterTests">
                 <methods>
@@ -69,7 +70,11 @@
                     <include name="purchaseMultipleProductsE2E"/>
                 </methods>
             </class>
-
+            <class name="fail.TestToFail">
+                <methods>
+                    <include name="changeLanguageToArabicFailing"/>
+                </methods>
+            </class>
             <class name="closeAccount.ClosingAccount">
                 <methods>
                     <include name="closingAccount"/>

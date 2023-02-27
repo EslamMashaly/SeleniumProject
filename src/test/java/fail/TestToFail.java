@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class TestToFail extends BaseTest {
     @Test
-    public void changeLanguageToArabic(){
+    public void changeLanguageToArabicFailing(){
         homePage.closePopUp();
         homePage.changeToArabic();
         Assert.assertEquals(homePage.arabicAssertionText(),"hi");

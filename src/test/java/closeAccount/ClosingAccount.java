@@ -8,7 +8,7 @@ import pages.AuthenticationPage;
 public class ClosingAccount extends BaseTest {
     @Test
     public void closingAccount() throws InterruptedException {
-       login();
+        login();
         var myAccountPage=homePage.goToMyAccountPage();
         myAccountPage.closeCookiesMessage();
         myAccountPage.goToCloseAccount();
