@@ -11,7 +11,7 @@ public class SearchResultsPage extends BasePage {
     private final By addedToCartAssertion = By.cssSelector(".-pam.-f1");
     private final By addedToWishListAssertion = By.cssSelector(".cnt");
     private final By cartButton = By.id("ci");
-    private final By saveItemButton = By.xpath("//button[@class='btn _def _i _rnd -mas -bg-wt']");
+    private final By saveItemButton = By.id("wishlist");
     private final By cookiesCancelButton=By.cssSelector(".cls");
 
     public Boolean assertSearchResults(String searchWord) {
@@ -20,7 +20,6 @@ public class SearchResultsPage extends BasePage {
         List<WebElement> products = driver.findElements(allItems);
         for (int i = 0; i < products.size(); i++) {
             String name = products.get(i).getText();
-            //System.out.println(name);
             if (name.contains(searchWord.substring(1))) {
                 j++;
                 if (j == 5) {
@@ -32,11 +31,11 @@ public class SearchResultsPage extends BasePage {
         return x;
     }
     public void addToCart(String product) {
-        String productToBuy = product;
+
         List<WebElement> products = driver.findElements(allItems);
         for (int i = 0; i < products.size(); i++) {
             String name = products.get(i).getText();
-            if (name.contains(productToBuy)) {
+            if (name.contains(product)) {
                 products.get(i).click();
                 click(addToCartButton2);
                 elementVisibilityExplicitWait(addedToCartAssertion, 10);

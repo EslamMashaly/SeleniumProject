@@ -12,6 +12,7 @@ public class BuyingAProductE2E extends BaseTest {
         login();
         String searchWord="zamalek tempo";
         var searchResultsPage=homePage.search(searchWord);
+        searchResultsPage.cancelCookiesMessage();
         var productPage=searchResultsPage.choosingTheProductToBuy("Tempo Zamalek Home Match Jersey 22/23 - Fan Edition");
         productPage.addToCart();
         productPage.chooseQuantity();

@@ -6,8 +6,8 @@ import org.testng.annotations.Test;
 import pages.AuthenticationPage;
 
 public class RegisterTests extends BaseTest {
-    private String email="b0328669e731@drmail.in";
-    private String password="gETZKvbhZ9m#Tpa";
+    private final String email="dfb66c5098a4@drmail.in";
+    private final String password="gETZKvbhZ9m#Tpa";
 
     @Test(priority = 0)
     public void testInvalidEmail(){
@@ -58,7 +58,7 @@ public class RegisterTests extends BaseTest {
         var personalDetailsPage=signUpPage.continueSigning2();
         String firstName="E";
         personalDetailsPage.enterFirstName(firstName);
-        personalDetailsPage.enterMiddleName("Khaled");
+        //personalDetailsPage.enterMiddleName("Khaled");
         personalDetailsPage.enterLastName("Eslam");
         personalDetailsPage.enterPhoneNumber("01013255468");
         Assert.assertEquals(personalDetailsPage.getShortFNameText(),"Name must have a minimum of 2 characters and maximum of 60.");
@@ -88,7 +88,7 @@ public class RegisterTests extends BaseTest {
         signUpPage.confirmPassword(password);
         var personalDetailsPage=signUpPage.continueSigning2();
         personalDetailsPage.enterFirstName("Eslam");
-        personalDetailsPage.enterMiddleName("Khaled");
+       // personalDetailsPage.enterMiddleName("Khaled");
         personalDetailsPage.enterLastName("Eslam");
         personalDetailsPage.enterPhoneNumber("3534");
         personalDetailsPage.pressContinue();
@@ -109,7 +109,7 @@ public class RegisterTests extends BaseTest {
         var personalDetailsPage=signUpPage.continueSigning2();
         String firstName="Eslam";
         personalDetailsPage.enterFirstName(firstName);
-        personalDetailsPage.enterMiddleName("Khaled");
+        //personalDetailsPage.enterMiddleName("Khaled");
         personalDetailsPage.enterLastName("Eslam");
         personalDetailsPage.enterPhoneNumber("01013255468");
         personalDetailsPage.pressContinue();

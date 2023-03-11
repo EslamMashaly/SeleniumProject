@@ -16,53 +16,57 @@ import pages.AuthenticationPage;
 import pages.BasePage;
 import pages.HomePage;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-    public static WebDriver driver;
-    protected HomePage homePage;
+    private WebDriver driver;
     protected BasePage basePage;
+    protected HomePage homePage;
+
 
     @Parameters("BrowserName")
     @BeforeMethod
     public void setUp(String browserName)   {
-        //ChromeOptions options=new ChromeOptions();
-        // options.addArguments("headless");
-        // String browserName="chrome";
+//        ChromeOptions options=new ChromeOptions();
+//        options.addArguments("headless");
+//         String browserName="edge";
         if(browserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+              driver = new ChromeDriver();
 
         }
         else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
-        } else if (browserName.equalsIgnoreCase("edge")) {
+        }
+        else if (browserName.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
 
         driver.get("https://www.jumia.com.eg");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(Duration.ZERO.withSeconds(10));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         basePage=new BasePage();
         basePage.setDriver(driver);
         homePage=new HomePage();
-
-
     }
+
 
     @AfterMethod
     public void tearDown(){
-      driver.quit();
+        driver.quit();
     }
+
 
     /*********************LOGIN**************************/
     public void login(){
         homePage.closePopUp();
         AuthenticationPage authenticationPage=homePage.goToSignInPage();
-        authenticationPage.enterEmail("b0328669e731@drmail.in");
+        authenticationPage.enterEmail("dfb66c5098a4@drmail.in");
         var signInPage= authenticationPage.continueSigningIn();
         signInPage.enterPassword("gETZKvbhZ9m#Tpa");
         signInPage.completeSigningIn();
@@ -73,11 +77,11 @@ public class BaseTest {
     @DataProvider
     public Object [][] getData(){
         Object[][] data=new Object[2][2];
-            data[0][0]="12345";
-            data[0][1]="12345";
-            data[1][0]="#$@#!";
-            data[1][1]="#$@#!";
-            return data;
+        data[0][0]="12345";
+        data[0][1]="12345";
+        data[1][0]="#$@#!";
+        data[1][1]="#$@#!";
+        return data;
     }
 
     @DataProvider(name = "search")
@@ -94,9 +98,9 @@ public class BaseTest {
     @DataProvider(name = "newsletter")
     public Object [][] newsLetterField(){
         Object[][] data=new Object[2][2];
-        data[0][0]="aba5740296ff@drmail.in";
+        data[0][0]="0254a7120b67@drmail.in";
         data[0][1]="male";
-        data[1][0]="b3d792f89dba@drmail.in";
+        data[1][0]="d8c0a286b126@drmail.in";
         data[1][1]="female";
 
         return data;

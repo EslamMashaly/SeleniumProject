@@ -52,5 +52,6 @@ ___
     }
 ```
 * Run the tests from the testng.xml file.
-
-Thanks 
+___
+### Note: This project was for learning purposes and used a real website so some tests may be deprecated over time.
+#### Thanks 

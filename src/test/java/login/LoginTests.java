@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import pages.AuthenticationPage;
 
 
-@Listeners(base.Listeners.class)
 public class LoginTests extends BaseTest {
 
     @Test(priority = 0)

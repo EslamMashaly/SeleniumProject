@@ -3,7 +3,6 @@ package closeAccount;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AuthenticationPage;
 
 public class ClosingAccount extends BaseTest {
     @Test
