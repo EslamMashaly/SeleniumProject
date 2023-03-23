@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pages.AuthenticationPage;
 
 public class RegisterTests extends BaseTest {
-    private final String email="dfb66c5098a4@drmail.in";
+    private final String email="06dd6efd668f@drmail.in";
     private final String password="gETZKvbhZ9m#Tpa";
 
     @Test(priority = 0)

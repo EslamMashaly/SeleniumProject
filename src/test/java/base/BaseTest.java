@@ -32,17 +32,14 @@ public class BaseTest {
 //        options.addArguments("headless");
 //         String browserName="edge";
         if(browserName.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
               driver = new ChromeDriver();
 
         }
         else if (browserName.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
         }
         else if (browserName.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
 

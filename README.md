@@ -1,4 +1,4 @@
-# Selenium Framework project for testing Jumia's website.
+# Selenium Framework project for testing e-commerce website.
 
 The project uses Selenium with Java, Maven and TestNG framework. 
 Designed with POM pattern.
@@ -17,9 +17,8 @@ Generates ExtentReport with screenshots of failed scripts.
 * Adding and removing Items from the cart
 * Checking out 
 * Closing Account
-* ### And two E2E scenarios
-  * Purchasing one product from adding to the cart to checking out
-  * Purchasing Multiple products from adding to the cart to checking out
+* Two E2E scenarios
+
 
 ## To try this test in your environment please check the following steps:
 ___
@@ -53,5 +52,5 @@ ___
 ```
 * Run the tests from the testng.xml file.
 ___
-### Note: This project was for learning purposes and used a real website so some tests may be deprecated over time.
+### Note: This project was for learning purposes and used a real website so some tests may fail over time.
 #### Thanks 
