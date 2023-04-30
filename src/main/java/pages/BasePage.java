@@ -31,7 +31,7 @@ public class BasePage {
     }
     protected void elementVisibilityExplicitWait(By locator, int duration){
         WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(duration));
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(locator)));
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(locator)));
     }
     protected void elementClickableExplicitWait(By locator, int duration){
         WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(duration));

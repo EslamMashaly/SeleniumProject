@@ -1,6 +1,5 @@
 package base;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -27,8 +26,8 @@ public class BaseTest {
 
     @Parameters("BrowserName")
     @BeforeMethod
-    public void setUp(String browserName)   {
-//        ChromeOptions options=new ChromeOptions();
+    public void setUp(String browserName)    {
+ //        ChromeOptions options=new ChromeOptions();
 //        options.addArguments("headless");
 //         String browserName="edge";
         if(browserName.equalsIgnoreCase("chrome")) {
