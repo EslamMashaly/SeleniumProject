@@ -29,7 +29,7 @@ public class BaseTest {
     public void setUp(String browserName)    {
  //        ChromeOptions options=new ChromeOptions();
 //        options.addArguments("headless");
-//         String browserName="edge";
+//        String browserName="edge";
         if(browserName.equalsIgnoreCase("chrome")) {
               driver = new ChromeDriver();
 
